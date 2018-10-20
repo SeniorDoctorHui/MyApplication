@@ -1,0 +1,2 @@
+# MyApplication
+Android进程间通讯demo，包括Messenger和aidl相关通信示例
