@@ -1,2 +1,3 @@
 # MyApplication
 Android进程间通讯demo，包括Messenger和aidl相关通信示例
+相关代码参考自《Android开发艺术探索》
