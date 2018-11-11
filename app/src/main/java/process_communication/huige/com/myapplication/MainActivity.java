@@ -12,8 +12,13 @@ import android.os.Messenger;
 import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+
+import java.util.ArrayList;
+
+import process_communication.huige.com.myapplication.mvp.GoodActivity;
 
 public class MainActivity extends Activity {
     private static final String TAG = "MainActivity";
@@ -41,6 +46,9 @@ public class MainActivity extends Activity {
 
         }
     };
+
+
+
     private static class MessengerHandler extends Handler{
         @Override
         public void handleMessage(Message msg) {
@@ -58,11 +66,32 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         Intent intent = new Intent(this, MessengerService.class);
         bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+        Outter outter=new Outter();
+
+
     }
     public void openBookManagerActivity(View view){
         Intent intent = new Intent(this,BookManagerActivity.class);
         startActivity(intent);
 
+    }
+    public void openBitmapMemoryTestActivity(View view){
+        Intent intent = new Intent(this,BitmapMemoryTestActivity.class);
+        startActivity(intent);
+    }
+    public void openMVPTest(View view) {
+        Intent intent = new Intent(this, GoodActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        DisplayMetrics metric = new DisplayMetrics();
+
+        getWindowManager().getDefaultDisplay().getMetrics(metric);
+        int densityDpi = metric.densityDpi;
+        Log.i("TAG", "densityDpi=" + densityDpi);
     }
 
     @Override

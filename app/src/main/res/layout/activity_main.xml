@@ -7,13 +7,35 @@
     tools:context="process_communication.huige.com.myapplication.MainActivity">
 
     <Button
+        android:id="@+id/btn_open_Book"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="BookManager"
         android:onClick="openBookManagerActivity"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/btn_open_BitmapTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BitmapTest"
+        android:onClick="openBitmapMemoryTestActivity"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/btn_open_Book"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/btn_open_mvpTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mvpTest"
+        android:onClick="openMVPTest"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/btn_open_BitmapTest"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </android.support.constraint.ConstraintLayout>

@@ -37,6 +37,7 @@ public class BookManagerActivity extends Activity {
 
 
     //Activity和Service建立连接成功会回调onServiceConnected的方法  此时BookManagerService和Activity绑定，若Activity销毁，则Service也会停止运行
+
     private ServiceConnection mConnection=new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
@@ -52,6 +53,7 @@ public class BookManagerActivity extends Activity {
                 List<Book> newList=bookManager.getBookList();
                 Log.i(TAG, "query book newList:" + newList.toString());
                 bookManager.registerListener(mOnNewBookArrivedListener);
+
             } catch (RemoteException e) {
                 e.printStackTrace();
             }

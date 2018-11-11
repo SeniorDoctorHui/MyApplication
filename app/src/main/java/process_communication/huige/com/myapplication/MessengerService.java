@@ -11,6 +11,8 @@ import android.os.RemoteException;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import java.util.Stack;
+
 /**
  * Created by Shinelon on 2018/10/15.
  */
@@ -20,6 +22,7 @@ public class MessengerService extends Service {
     private static class MessengerHandler extends Handler{
         @Override
         public void handleMessage(Message msg) {
+            Stack<Integer> stack=new Stack<>();
             super.handleMessage(msg);
             switch (msg.what){
                 case MyConstants.MSG_FROM_CLIENT:

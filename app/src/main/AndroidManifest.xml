@@ -19,12 +19,14 @@
 
         <service
             android:name=".MessengerService"
-            android:process=":remote"></service>
+            android:process=":remote" />
         <service
             android:name=".BookManagerService"
-            android:process=":remote"></service>
+            android:process=":remote" />
 
-        <activity android:name=".BookManagerActivity"></activity>
+        <activity android:name=".BookManagerActivity" />
+        <activity android:name=".BitmapMemoryTestActivity" />
+        <activity android:name=".mvp.GoodActivity"></activity>
     </application>
 
 </manifest>
